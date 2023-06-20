@@ -3,7 +3,7 @@ install:
 		pip install -r requirements.txt
 
 lint:
-	pylint --disable=R,C src/hello.py
+	pylint --disable=R,C src/
 
 format:
 	black src
