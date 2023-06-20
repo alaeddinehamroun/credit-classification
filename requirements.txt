@@ -8,3 +8,4 @@ click
 pylint
 pytest-cov
 black
+pre-commit
