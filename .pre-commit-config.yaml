@@ -17,3 +17,4 @@ repos:
         additional_dependencies: [pre-commit, pytest, pandas, scikit-learn, matplotlib]
         always_run: true
         pass_filenames: false
+        
