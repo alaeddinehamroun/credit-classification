@@ -7,11 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Train model
-        env:
-          GDRIVE_CREDENTIALS_DATA: ${{secrets.GDRIVE_CREDENTIALS_DATA}}
+  
         run: |
           pip install -r requirements.txt   # Install dependencies
-          dvc pull data/data.csv            # Pull data
           dvc repro                         # Reproduce pipeline
 
       - name: Create CML Report
