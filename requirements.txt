@@ -1,11 +1,3 @@
-pandas
+setuptools
 scikit-learn
 matplotlib
-seaborn
-numpy
-pytest
-click
-pylint
-pytest-cov
-black
-pre-commit
