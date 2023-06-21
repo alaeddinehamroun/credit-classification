@@ -25,8 +25,8 @@ stages:
       size: 5932376
     - path: src/models/random_forest.py
       hash: md5
-      md5: 8e6111d1142a754535ca0bf3a68f7385
-      size: 133
+      md5: b6d6f383bc5c5ddc462e4d456fc4108e
+      size: 132
     - path: src/train_model.py
       hash: md5
       md5: b98975c26c607d42d0d2d98e043708a4
@@ -34,9 +34,9 @@ stages:
     outs:
     - path: feature_importance.png
       hash: md5
-      md5: cad1a568b886fc099a5b0e48a3d7787b
-      size: 68401
+      md5: 29808fc01715d7a5d92c0c3e189d8ae2
+      size: 68097
     - path: metrics.json
       hash: md5
-      md5: b25bc9edca7275b9d842a2931e953be6
+      md5: bc359165f5e1d8822eca8d611f5be7c8
       size: 65
