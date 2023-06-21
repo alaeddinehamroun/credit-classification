@@ -22,8 +22,8 @@ jobs:
           echo "## Metrics:" >> report.md
           
           git config --global --add safe.directory /__w/credit-classification/credit-classification
-          git fetch --prune
+          git fetch --depth=1 origin master:master
           
-          dvc metrics diff master >> report.md
+          dvc metrics diff master --show-md >> report.md
           echo '![](./feature_importance.png "Feature Importance")' >> report.md
           cml comment create report.md
