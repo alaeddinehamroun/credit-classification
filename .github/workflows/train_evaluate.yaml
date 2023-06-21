@@ -20,7 +20,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global --add safe.directory /__w/credit-classification/credit-classification
-          git fetch --depth=1 origin main:main
+          git fetch --prune
           dvc metrics diff master --show-md >> report.md
           cat metrics.json
           cat metrics.json >> report.md
