@@ -19,6 +19,8 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git fetch --depth=1 origin master
+          dvc metrics diff master --show-md >> report.md
           cat metrics.json
           cat metrics.json >> report.md
           echo '![](./feature_importance.png "Feature Importance")' >> report.md
