@@ -22,11 +22,13 @@ predictions = model.predict(x_test)
 
 # Metrics
 acc = accuracy_score(y_test, predictions)
+precision = accuracy_score(y_test, predictions)
 
 
 # Write scores to a file
 with open("metrics.json", "w") as outfile:
     json.dump({"accuracy": acc}, outfile)
+    json.dump({"precision": precision}, outfile)
 
 # Plot feature importance
 importances = model.feature_importances_
