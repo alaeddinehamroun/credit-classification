@@ -22,7 +22,7 @@ jobs:
           echo "## Metrics:" >> report.md
           
           git config --global --add safe.directory /__w/credit-classification/credit-classification
-          git fetch --depth=1 origin master:master
+          git fetch --prune
           echo metrics.json >> report.md
           dvc metrics diff master --md >> report.md
           echo '![](./feature_importance.png "Feature Importance")' >> report.md
