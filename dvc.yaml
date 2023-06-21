@@ -1,0 +1,18 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+      - src/preprocess.py
+      - data/data.csv
+    outs:
+      - data/processed_data.csv
+  train & evaluate:
+    cmd: python src/train_model.py
+    deps:
+      - src/train_model.py
+      - data/processed_data.csv
+    outs:
+      - feature_importance.png
+    metrics:
+      - metrics.json:
+          cache: false
