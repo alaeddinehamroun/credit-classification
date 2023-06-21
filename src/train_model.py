@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score
 import json
 from models.random_forest import random_forest_model
 from data.data_split import data_split
@@ -22,13 +22,12 @@ predictions = model.predict(x_test)
 
 # Metrics
 acc = accuracy_score(y_test, predictions)
-precision = accuracy_score(y_test, predictions)
+precision = precision_score(y_test, predictions)
 
 
 # Write scores to a file
 with open("metrics.json", "w") as outfile:
-    json.dump({"accuracy": acc}, outfile)
-    json.dump({"precision": precision}, outfile)
+    json.dump({"accuracy": acc, "precision": precision}, outfile)
 
 # Plot feature importance
 importances = model.feature_importances_
