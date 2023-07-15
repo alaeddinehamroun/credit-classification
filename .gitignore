@@ -161,3 +161,5 @@ cython_debug/
 
 /stunning-flight-390315-4bf69b489e20.json
 /feature_importance.png
+/mlruns
+/.env

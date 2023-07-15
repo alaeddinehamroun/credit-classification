@@ -9,3 +9,7 @@ pylint
 pytest-cov
 black
 pre-commit
+
+mlflow
+python-dotenv
+databricks-cli

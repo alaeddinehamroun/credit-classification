@@ -5,7 +5,13 @@ from sklearn.metrics import accuracy_score, precision_score
 import json
 from models.random_forest import random_forest_model
 from data.data_split import data_split
+import os
+import mlflow
 
+
+mlflow.set_tracking_uri("databricks")
+mlflow.set_experiment("/Users/alaeddinehamroun@gmail.com/experiment-1")
+mlflow.sklearn.autolog()
 
 # Load in the processed data
 df = pd.read_csv("data/processed_data.csv")
@@ -50,3 +56,5 @@ ax.set_title("Random forest \nfeature importance", fontsize=title_fs)
 plt.tight_layout()
 plt.savefig("feature_importance.png", dpi=120)
 plt.close()
+
+mlflow.end_run()
