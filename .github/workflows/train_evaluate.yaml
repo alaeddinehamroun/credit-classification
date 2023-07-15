@@ -9,7 +9,7 @@ jobs:
       - uses: iterative/setup-dvc@v1
       - name: create .databrickscfg
         run: |
-          echo "${{ secrets.DATABRICKS_CFG }} > ~/.databrickscfg
+          echo ${{ secrets.DATABRICKS_CFG }} > ~/.databrickscfg
       - name: Train model
         env:
           GDRIVE_CREDENTIALS_DATA: ${{secrets.GDRIVE_CREDENTIALS_DATA}}
