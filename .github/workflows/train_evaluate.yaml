@@ -14,8 +14,9 @@ jobs:
         env:
           GDRIVE_CREDENTIALS_DATA: ${{secrets.GDRIVE_CREDENTIALS_DATA}}
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt   # Install dependencies
-          dvc pull --run-cache                 # Pull data
+          dvc pull data/data.csv --run-cache                 # Pull data
           dvc repro                         # Reproduce pipeline
 
       - name: Create CML Report
