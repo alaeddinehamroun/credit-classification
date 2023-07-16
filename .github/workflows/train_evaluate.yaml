@@ -27,6 +27,6 @@ jobs:
           git config --global --add safe.directory /__w/credit-classification/credit-classification
           git fetch --prune
           echo metrics.json >> report.md
-          dvc metrics diff master --md > report.md
+          dvc metrics diff master --md >> report.md
           echo '![](./feature_importance.png "Feature Importance")' >> report.md
           cml comment create report.md
