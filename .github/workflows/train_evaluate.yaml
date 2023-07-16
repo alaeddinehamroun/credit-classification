@@ -24,7 +24,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "## Metrics:" >> report.md
-          
+          git config --global --add safe.directory /__w/credit-classification/credit-classification
           git fetch --prune
           cat metrics.json >> report.md
           dvc metrics show -T >> report.md
