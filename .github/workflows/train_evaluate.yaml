@@ -27,6 +27,7 @@ jobs:
           
           git fetch --prune
           cat metrics.json >> report.md
-          dvc metrics diff master --md >> report.md
+          dvc metrics show -T >> report.md
+          dvc metrics diff --md >> report.md
           echo '![](./feature_importance.png "Feature Importance")' >> report.md
           cml comment create report.md
